@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#123d3a" />
+    <title>Caqui em Dia — Atendimento confiável</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-lockup">
+          <div class="brand-mark">ca</div>
+          <div>
+            <div class="brand-name">caqui</div>
+            <div class="brand-subtitle">atendimento confiável</div>
+          </div>
+        </div>
+
+        <div class="workspace-label">Workspace de demonstração</div>
+        <nav class="main-nav" aria-label="Navegação principal">
+          <button class="nav-item active" data-view="app-view"><span class="nav-icon">⌂</span><span>Aplicativo</span></button>
+          <button class="nav-item" data-view="whatsapp-view"><span class="nav-icon whatsapp-icon">◉</span><span>WhatsApp</span><span class="nav-badge">simulado</span></button>
+          <button class="nav-item" data-view="chatbot-view"><span class="nav-icon">✦</span><span>Chatbot</span></button>
+          <button class="nav-item" data-view="human-view"><span class="nav-icon">↗</span><span>Painel humano</span><span class="queue-dot"></span></button>
+        </nav>
+
+        <div class="sidebar-spacer"></div>
+        <div class="guardrail-card">
+          <div class="guardrail-icon">✓</div>
+          <div>
+            <strong>Confiança ativa</strong>
+            <p>Fontes, prazos e saída para uma pessoa em todos os fluxos.</p>
+          </div>
+        </div>
+        <div class="sidebar-footer">
+          <span class="status-dot"></span>
+          <span>API local conectada</span>
+          <span class="version">v0.1</span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Atendimento</span><span class="breadcrumb-separator">/</span><strong id="breadcrumb-title">Aplicativo do cliente</strong></div>
+          <div class="topbar-actions">
+            <div class="reference-chip"><span class="status-dot"></span><span>Dados sintéticos</span><span class="chip-divider"></span><span>18 nov 2026 · 10:00</span></div>
+            <button class="icon-button" title="Ajuda">?</button>
+            <div class="avatar">LM</div>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="view active" id="app-view">
+            <div class="page-heading split-heading">
+              <div>
+                <div class="eyebrow">Jornada do cliente</div>
+                <h1>Cadê meu dinheiro?</h1>
+                <p class="heading-copy">Acompanhe sua operação com clareza, fonte e um próximo passo visível.</p>
+              </div>
+              <div class="customer-switcher">
+                <label for="customer-select">Cliente da simulação</label>
+                <select id="customer-select"></select>
+              </div>
+            </div>
+
+            <div class="trust-banner">
+              <div class="trust-banner-icon">✦</div>
+              <div class="trust-banner-copy"><strong>Você não precisa repetir sua história.</strong><span>O aplicativo leva a operação, o histórico e as fontes junto se uma pessoa precisar assumir.</span></div>
+              <button class="text-button" data-view-target="chatbot-view" data-prefill="Quero acompanhar meu resgate">Perguntar agora <span>→</span></button>
+            </div>
+
+            <div class="dashboard-grid">
+              <div class="dashboard-main">
+                <article class="card featured-operation" id="featured-operation-card">
+                  <div class="card-topline"><span class="section-label">Sua operação em destaque</span><span class="live-pill"><span class="status-dot"></span>Atualizado agora</span></div>
+                  <div id="featured-operation-content" class="loading-block">Carregando operação...</div>
+                </article>
+
+                <div class="section-header"><div><span class="section-label">O que você pode fazer</span><h2>Resolva sem fila</h2></div><span class="small-muted">Escolha um caminho</span></div>
+                <div class="action-grid">
+                  <button class="action-card" data-view-target="chatbot-view" data-prefill="Quero entender o prazo do meu resgate">
+                    <span class="action-icon action-icon-teal">◷</span><span class="action-title">Entender o prazo</span><span class="action-copy">Veja o cálculo com dias úteis e horário de corte.</span><span class="action-arrow">→</span>
+                  </button>
+                  <button class="action-card" data-view-target="whatsapp-view" data-prefill="Resgatei ontem e não caiu. Sumiu?">
+                    <span class="action-icon action-icon-lilac">◌</span><span class="action-title">Falar pelo WhatsApp</span><span class="action-copy">Simule uma conversa e leve o contexto com você.</span><span class="action-arrow">→</span>
+                  </button>
+                  <button class="action-card" data-view-target="human-view">
+                    <span class="action-icon action-icon-peach">↗</span><span class="action-title">Falar com uma pessoa</span><span class="action-copy">Saída visível em qualquer passo, sem repetir a demanda.</span><span class="action-arrow">→</span>
+                  </button>
+                </div>
+
+                <div class="section-header operation-header"><div><span class="section-label">Histórico da conta</span><h2>Suas operações</h2></div><button class="link-button" id="refresh-data">Atualizar <span>↻</span></button></div>
+                <div class="card operations-card" id="operations-list"><div class="loading-block">Carregando histórico...</div></div>
+              </div>
+
+              <aside class="dashboard-side">
+                <div class="side-card account-card" id="account-card"><div class="loading-block">Carregando conta...</div></div>
+                <div class="side-card source-card">
+                  <div class="side-card-heading"><span class="section-label">Como você pode confiar</span><span class="source-count">03</span></div>
+                  <div class="confidence-list">
+                    <div class="confidence-item"><span class="confidence-number">01</span><div><strong>Fonte visível</strong><p>Cada prazo aponta para a regra ou para a operação da sua conta.</p></div></div>
+                    <div class="confidence-item"><span class="confidence-number">02</span><div><strong>Sem chute</strong><p>Quando a informação não está nos dados, a resposta diz que não sabe.</p></div></div>
+                    <div class="confidence-item"><span class="confidence-number">03</span><div><strong>Humano de verdade</strong><p>Se precisar, uma pessoa recebe tudo o que já aconteceu.</p></div></div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          <section class="view" id="whatsapp-view">
+            <div class="page-heading compact-heading"><div class="eyebrow">Canal simulado</div><h1>WhatsApp da Caqui</h1><p class="heading-copy">Teste como a mesma regra responde em uma conversa familiar e objetiva.</p></div>
+            <div class="channel-layout">
+              <div class="phone-shell whatsapp-shell">
+                <div class="phone-notch"></div>
+                <div class="phone-header"><button class="phone-back">‹</button><div class="phone-avatar">ca</div><div class="phone-contact"><strong>Caqui Invest</strong><span><span class="online-dot"></span> atendimento seguro</span></div><div class="phone-actions">⋮</div></div>
+                <div class="phone-date">HOJE</div>
+                <div class="message-list" id="whatsapp-messages">
+                  <div class="message incoming">Olá, Marta. Sou o atendimento seguro da Caqui. Como posso ajudar?<span class="message-time">10:00 ✓✓</span></div>
+                  <div class="message incoming">Você pode acompanhar resgates, entender prazos ou pedir uma pessoa. Nunca enviaremos links para pedir senha ou código.<span class="message-time">10:00 ✓✓</span></div>
+                </div>
+                <div class="quick-replies" id="whatsapp-quick-replies"><button data-message="Resgatei ontem e não caiu. Sumiu?">Onde está meu resgate?</button><button data-message="Um gerente pediu meu código SMS, posso passar?">É golpe?</button></div>
+                <form class="message-composer" id="whatsapp-form"><button type="button" class="composer-plus">+</button><input id="whatsapp-input" placeholder="Digite uma mensagem" autocomplete="off" /><button class="send-button" type="submit">↑</button></form>
+              </div>
+              <div class="channel-explainer"><div class="eyebrow">Por baixo da conversa</div><h2>WhatsApp é só uma porta de entrada.</h2><p>A mensagem passa pelo mesmo back-end do aplicativo e do chatbot. Isso garante que prazo, fonte, risco e encaminhamento sejam consistentes em todos os canais.</p><div class="flow-card"><div class="flow-step"><span>01</span><div><strong>Mensagem</strong><small>Canal WhatsApp simulado</small></div></div><div class="flow-line"></div><div class="flow-step"><span>02</span><div><strong>Motor de regras</strong><small>Conta, calendário e risco</small></div></div><div class="flow-line"></div><div class="flow-step"><span>03</span><div><strong>Resposta ou humano</strong><small>Com protocolo e contexto</small></div></div></div><div class="scenario-card"><span class="scenario-label">Cenários para testar</span><button data-message="Um gerente me ligou pedindo o código do SMS, posso passar?" data-channel-target="whatsapp">Golpe em andamento <span>→</span></button><button data-message="Tenho R$ 50 mil, onde eu coloco?" data-channel-target="whatsapp">Pedido de recomendação <span>→</span></button></div></div>
+            </div>
+          </section>
+
+          <section class="view" id="chatbot-view">
+            <div class="page-heading compact-heading"><div class="eyebrow">Assistente guiado</div><h1>Chatbot com rastreabilidade</h1><p class="heading-copy">As respostas são explicadas, citam a fonte e sabem quando entregar para uma pessoa.</p></div>
+            <div class="chatbot-layout">
+              <div class="chat-panel card"><div class="chat-panel-header"><div class="assistant-avatar">✦</div><div><strong>Caqui em Dia</strong><span>Assistente de acompanhamento</span></div><span class="secure-label"><span class="status-dot"></span>Seguro</span></div><div class="chat-messages" id="chatbot-messages"><div class="chat-message bot"><div class="bot-mark">✦</div><div><p>Olá, <span id="chatbot-first-name">Marta</span>. Eu consigo acompanhar uma operação da sua conta, explicar o prazo e mostrar a fonte da informação.</p><span class="chat-time">10:00</span></div></div><div class="chat-message bot"><div class="bot-mark">✦</div><div><p>Por onde começamos?</p><span class="chat-time">10:00</span></div></div></div><div class="chat-suggestions"><button data-message="Quero entender o prazo do meu resgate">Entender meu prazo</button><button data-message="Resgatei ontem e não caiu. Sumiu?">Onde está meu dinheiro?</button><button data-message="Quero falar com uma pessoa">Falar com humano</button></div><form class="chat-composer" id="chatbot-form"><input id="chatbot-input" placeholder="Escreva sua dúvida..." autocomplete="off" /><button type="submit">Enviar <span>↗</span></button></form></div>
+              <aside class="chat-side"><div class="card policy-card"><div class="section-label">Resposta auditável</div><h3>O assistente não decide sozinho.</h3><p>Ele entende a pergunta e redige a conversa. O prazo, a fonte e o encaminhamento passam por regras determinísticas no back-end.</p><div class="policy-tags"><span>Regra 1</span><span>Regra 8</span><span>Regra 9</span></div></div><div class="card last-answer-card" id="last-answer-card"><div class="section-label">Última resposta</div><p class="empty-state">Envie uma mensagem para ver as fontes e a decisão do back-end.</p></div></aside>
+            </div>
+          </section>
+
+          <section class="view" id="human-view">
+            <div class="page-heading compact-heading split-heading"><div><div class="eyebrow">Operação humana</div><h1>Painel de atendimento</h1><p class="heading-copy">Cada caso chega com histórico, risco, fonte e próximo passo.</p></div><div class="queue-summary"><span class="queue-number">03</span><div><strong>casos na fila</strong><small>priorizados pelo risco</small></div></div></div>
+            <div class="human-layout"><div class="queue-panel card"><div class="queue-toolbar"><div><span class="section-label">Fila de hoje</span><h2>Atendimentos que precisam de contexto</h2></div><div class="filter-pills"><button class="filter-pill active">Todos <span>3</span></button><button class="filter-pill">Críticos <span>1</span></button></div></div><div class="queue-list" id="queue-list"><div class="loading-block">Carregando fila...</div></div></div><aside class="human-side"><div class="card human-principle"><div class="principle-mark">↗</div><div class="section-label">Princípio do painel</div><h3>O cliente não repete a demanda.</h3><p>O atendente vê a conversa, a operação consultada, as fontes exibidas e as proteções acionadas pelo sistema.</p><div class="handoff-stat"><strong>100%</strong><span>do contexto acompanha o protocolo</span></div></div><div class="card test-card"><div class="section-label">Teste rápido</div><h3>Quer provocar um caso?</h3><p>Abra o simulador de WhatsApp e escreva que alguém pediu seu código SMS.</p><button class="outline-button" data-view-target="whatsapp-view" data-prefill="Um gerente pediu meu código SMS, posso passar?">Abrir simulador <span>→</span></button></div></aside></div>
+          </section>
+
+          <div class="toast" id="toast" role="status"></div>
+        </div>
+      </main>
+    </div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
