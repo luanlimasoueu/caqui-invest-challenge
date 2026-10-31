@@ -21,6 +21,19 @@ Depois, abra <http://127.0.0.1:8000>.
 
 O servidor não precisa de dependências externas para esta demonstração. Ele lê os dados sintéticos diretamente do arquivo `caqui-invest-main.zip`.
 
+## Publicação na Vercel
+
+O projeto está pronto para ser importado diretamente na Vercel, mantendo a
+raiz do repositório como **Root Directory**.
+
+- `public/` contém o HTML, CSS e JavaScript publicados no CDN;
+- `api/index.py` expõe a API Python serverless;
+- `vercel.json` encaminha `/api/*` para a função e inclui os dados
+  sintéticos no bundle.
+
+Não configure comando de build nem *Output Directory*. Após um novo deploy,
+abra a URL de produção e confirme que `/api/health` retorna JSON.
+
 ## Endpoints principais
 
 ```text

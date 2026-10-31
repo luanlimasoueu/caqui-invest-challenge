@@ -22,7 +22,7 @@ from urllib.parse import parse_qs, urlparse
 
 
 ROOT = Path(__file__).resolve().parent.parent
-WEB_DIR = Path(__file__).resolve().parent / "web"
+WEB_DIR = ROOT / "public"
 ZIP_PATH = ROOT / "caqui-invest-main.zip"
 REFERENCE_NOW = datetime.fromisoformat("2026-11-18T10:00:00-03:00")
 DEFAULT_CUSTOMER_ID = "C-0001"
@@ -475,8 +475,8 @@ class AppHandler(BaseHTTPRequestHandler):
             self.send_json({"items": queue_items()})
         elif parsed.path == "/" or parsed.path == "/index.html":
             self.send_file(WEB_DIR / "index.html")
-        elif parsed.path.startswith("/assets/"):
-            self.send_file(WEB_DIR / parsed.path.removeprefix("/assets/"))
+        elif parsed.path in {"/styles.css", "/app.js"}:
+            self.send_file(WEB_DIR / parsed.path.lstrip("/"))
         else:
             self.send_error(HTTPStatus.NOT_FOUND)
 
